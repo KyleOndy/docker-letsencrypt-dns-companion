@@ -10,10 +10,9 @@ run apk add --update \
         python
 
 RUN cd / \
- #&& mkdir -p /var/www/dehydrated \
  && git clone https://github.com/lukas2511/dehydrated.git \
- && pip install dns-lexicon dns-lexicon[route53] boto3
  # need to install boto3 explicitly. For some reason dns-lexicon[route53] doesn't seem to do it
+ && pip install dns-lexicon dns-lexicon[route53] boto3
 
 ADD https://raw.githubusercontent.com/AnalogJ/lexicon/master/examples/dehydrated.default.sh /dehydrated/
 RUN chmod +x /dehydrated/dehydrated.default.sh
