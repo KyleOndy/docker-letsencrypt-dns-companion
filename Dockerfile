@@ -17,6 +17,7 @@ RUN cd / \
 
 ADD https://raw.githubusercontent.com/AnalogJ/lexicon/master/examples/dehydrated.default.sh /dehydrated/
 RUN chmod +x /dehydrated/dehydrated.default.sh
+ADD dns-certbot.sh /dns-certbot.sh
+RUN chmod +x /dns-certbot.sh
 
-ENTRYPOINT [ "/dehydrated/dehydrated" ]
-CMD [ "" ]
+ENTRYPOINT  [ "/dns-certbot.sh" ]

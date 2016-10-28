@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  dns-certbot:
+    build: .
+    volumes:
+      - ./config:/dehydrated/config:ro
+      - certs:/certs
+    environment:
+      - PROVIDER=route53
+      - LEXICON_ROUTE53_ACCESS_KEY=AAAAAAAAAAAAAAAAAAAA
+      - LEXICON_ROUTE53_ACCESS_SECRET=BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+      - CERTBOT_DOMAIN=
+
+volumes:
+  certs:
+    driver: local
