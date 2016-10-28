@@ -42,6 +42,6 @@ To get this image running you need to define at *LEAST* the following environmen
 
 ### Optional config
 
-`CERTBOT_OUTPUT` - where the certs are output. Defaults to `/certs`.
+`CERTBOT_OUTPUT` - where the certs are output. Defaults to `/certs`. Should probably be a volume mount somewhere
 
-`CERTBOT_INTERVAL`: use standard Linux sleep amounts. (s)econds, (m)inutes, (h)ours, (d)ays. Default to 1day
+`CERTBOT_INTERVAL`: The interval certbot will sleep between attempting to renew certs. use standard Linux sleep amounts. (s)econds, (m)inutes, (h)ours, (d)ays. Default to 1day
