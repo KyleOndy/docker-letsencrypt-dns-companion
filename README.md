@@ -21,7 +21,7 @@ The config file also lets you set the testing serer so you don't use all your Le
 
 `CONTACT_EMAIL=`: set to your email address
 
-`#CA="https://acme-staging.api.letsencrypt.org/directory`: use this CA for testing
+`CA="https://acme-staging.api.letsencrypt.org/directory`: use this CA for testing
 
 
 ## To make it work
