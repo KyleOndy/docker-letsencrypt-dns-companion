@@ -30,9 +30,8 @@ As I use [Route53](https://aws.amazon.com/route53/) to manage my DNS that is all
 
 ### Minimal Config
 
-To get this image running you need to define at *LEAST* the following environmental variables.
+To get this image running you need to define at *LEAST* the following environmental variables. Using `docker-compose.yml` is easiest.
 
-Need to pass Lexicon environmental variables (easiest to use docker-compose.yml)
 `PROVIDER=route53`: I use Route53. Other possible values can be found [here](https://github.com/AnalogJ/lexicon/tree/master/lexicon/providers).
 
 `LEXICON_ROUTE53_ACCESS_KEY=AAAAAAAAAAAAAAAAAAAA`
