@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  dns-certbot:
+    build: .
+    volumes:
+      - /home/kondy/src/dns-certbot/config:/dehydrated/config:ro
+      - certs:/certs
+    environment:
+      - PROVIDER=route53
+      - LEXICON_ROUTE53_ACCESS_KEY=
+      - LEXICON_ROUTE53_ACCESS_SECRET=
+    command: --cron --hook dehydrated/dehydrated.default.sh --challenge dns-01 --domain {{mail_domain}} --out /certs
+
+volumes:
+  certs:
+    driver: local
