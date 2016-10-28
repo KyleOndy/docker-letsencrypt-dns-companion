@@ -20,6 +20,7 @@ The config file also lets you set the testing serer so you don't use all your Le
 
 
 `CONTACT_EMAIL=`: set to your email address
+
 `#CA="https://acme-staging.api.letsencrypt.org/directory`: use this CA for testing
 
 
@@ -33,10 +34,15 @@ To get this image running you need to define at *LEAST* the following environmen
 
 Need to pass Lexicon environmental variables (easiest to use docker-compose.yml)
 `PROVIDER=route53`: I use Route53. Other possible values can be found [here](https://github.com/AnalogJ/lexicon/tree/master/lexicon/providers).
+
 `LEXICON_ROUTE53_ACCESS_KEY=AAAAAAAAAAAAAAAAAAAA`
+
 `AEXICON_ROUTE53_ACCESS_SECRET=BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB`
+
 `CERTBOT_DOMAIN`: what domain are we making certs for?
 
 ### Optional config
+
 `CERTBOT_OUTPUT` - where the certs are output. Defaults to `/certs`.
+
 `CERTBOT_INTERVAL`: use standard Linux sleep amounts. (s)econds, (m)inutes, (h)ours, (d)ays. Default to 1day
