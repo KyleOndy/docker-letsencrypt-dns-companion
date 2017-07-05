@@ -17,10 +17,10 @@ RUN git clone https://github.com/lukas2511/dehydrated.git /dehydrated
 RUN cd /dehydrated && git checkout tags/v${DEHYDRATED_VERSION}
 
 # Lexicon
-# need to install boto3 explicitly. For some reason dns-lexicon[route53] doesn't seem to do it
-RUN pip install dns-lexicon==${LEXICON_VERSION} dns-lexicon[route53] boto3
 RUN git clone https://github.com/AnalogJ/lexicon.git /lexicon
 RUN cd /lexicon && git checkout tags/v${LEXICON_VERSION}
+# install from local source
+RUN pip install /lexicon[route53]
 RUN cp /lexicon/examples/dehydrated.default.sh /dehydrated/
 RUN chmod +x /dehydrated/dehydrated.default.sh
 
