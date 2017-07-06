@@ -13,16 +13,15 @@ run apk add --update \
         python
 
 # Dehydrated
-RUN git clone https://github.com/lukas2511/dehydrated.git /dehydrated
-RUN cd /dehydrated && git checkout tags/v${DEHYDRATED_VERSION}
+RUN git clone https://github.com/lukas2511/dehydrated.git /srv/dehydrated
+RUN cd /srv/dehydrated && git checkout tags/v${DEHYDRATED_VERSION}
 
 # Lexicon
-RUN git clone https://github.com/AnalogJ/lexicon.git /lexicon
-RUN cd /lexicon && git checkout tags/v${LEXICON_VERSION}
-# install from local source
-RUN pip install /lexicon[route53]
-RUN cp /lexicon/examples/dehydrated.default.sh /dehydrated/
-RUN chmod +x /dehydrated/dehydrated.default.sh
+RUN git clone https://github.com/AnalogJ/lexicon.git /srv/lexicon
+RUN cd /srv/lexicon && git checkout tags/v${LEXICON_VERSION}
+RUN pip install /srv/lexicon[route53]
+RUN cp /srv/lexicon/examples/dehydrated.default.sh /srv/dehydrated/
+RUN chmod +x srv/dehydrated/dehydrated.default.sh
 
 
 ADD dns-certbot.sh /dns-certbot.sh

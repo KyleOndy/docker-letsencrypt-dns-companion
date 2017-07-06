@@ -10,6 +10,30 @@ Once I settle on something I will push a stable version to `kyleondy/dns-certbot
 
 ----
 
+## Ideas
+
+#### General
+
+Lightweight. Once container per service.
+
+No cron, so sleep
+
+ex: docker-mailserver
+
+
+#### Config
+
+```yaml
+# docker-compose.yml
+image: kyleondy/docker-letsencrypt-dns-companion:stable
+enviroment:
+  - DNS_PROVIDER=digitalocean
+  - API_KEY=xxxx
+  -
+```
+
+# OLD STUFF BELOW
+
 `dns-certbot` is a sidekick docker image to make creation of [LetsEncrypt](https://letsencrypt.org/) certifications as easy as possible using [dehydrated](https://github.com/lukas2511/dehydrated) to interact with LetsEncrypt and [lexicon](https://github.com/AnalogJ/lexicon) to update DNS.
 
 

@@ -4,13 +4,12 @@ services:
   dns-certbot:
     build: .
     volumes:
-      - ./config:/dehydrated/config:ro
+      - ./config:/srv/dehydrated/config:ro
       - certs:/certs
     environment:
-      - PROVIDER=route53
-      - LEXICON_ROUTE53_ACCESS_KEY=AAAAAAAAAAAAAAAAAAAA
-      - LEXICON_ROUTE53_ACCESS_SECRET=BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-      - CERTBOT_DOMAIN=
+      - PROVIDER=digitalocean
+      - LEXICON_DIGITALOCEAN_TOKEN=df665a2afd38d5b01c17c790d44684f11f2a3810c84baf35f0689eb8ad4dedf9
+      - CERTBOT_DOMAIN=mail.ondy.me
 
 volumes:
   certs:
