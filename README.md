@@ -33,8 +33,9 @@ enviroment:
 ### Environmental Variables
 
 Required: `LETSENCRYPT_EMAIL`
-Optional: `LETSENCRYPT_CA`. Defaults to production server. Set to `https://acme-staging.api.letsencrypt.org/directory` for testing.
-Optional: `CERTBOT_OUTPUT` - where the certs are output. Defaults to `/certs`. Should probably be a volume mount somewhere
+Required: `CERTBOT_DOMAIN`: Domain you want to generate certs for.
+Optional: `LETSENCRYPT_CA`: Defaults to production server. Set to `https://acme-staging.api.letsencrypt.org/directory` for testing.
+Optional: `CERTBOT_OUTPUT`: Where the certs are output. Defaults to `/certs`. Should probably be a volume mount somewhere
 Optional: `CERTBOT_INTERVAL`: The interval certbot will sleep between attempting to renew certs. use standard Linux sleep amounts. (s)econds, (m)inutes, (h)ours, (d)ays. Default to 1day
 
 ## To make it work
