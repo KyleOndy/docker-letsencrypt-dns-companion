@@ -2,7 +2,7 @@ FROM alpine:latest
 MAINTAINER Kyle Ondy <kyle@ondy.me>
 
 ENV LEXICON_VERSION 2.1.10
-ENV DEHYDRATED_VERSION 0.4.0
+ENV DEHYDRATED_VERSION 0.5.0
 
 run apk add --update \
         bash \
